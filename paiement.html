@@ -1,0 +1,39 @@
+<html lang="en">
+<head><meta charset="UTF-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Effectuer le paiement</title>
+</head>
+<body class="bg-dark">
+    <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="card" style="width: 22rem;border: 1px solid rgb(191, 191, 191);border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;">
+            <img src="https://image.freepik.com/vecteurs-libre/illustration-paiement-mobile_272892-243.jpg" class="card-img-top" alt="Image">
+            <div class="card-body">
+                <h5 class="card-title text-center text-muted">Effectuer le paiement</h5><br>
+				<button onclick="openWidget();" class="btn btn-success col-12">Payer <i class="fa-solid fa-sack-dollar"></i></button>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+
+
+
+<script src="https://widget.nokash.app/app/views/Widget/js/scriptwidget.js"></script>
+<script>
+	function openWidget() {
+	const idWidget = "650ee76c1ae6f1695475";
+	var urlParams = new URLSearchParams(window.location.search);
+	var amount = urlParams.get('montant');
+	paiement(callbackReussite, callbackErreur, idWidget, amount);
+	}
+	// Définition des fonctions de rappel (callbacks)
+	function callbackReussite(response) {
+        redirigerVersPage("success_operation.php");
+    }
+    function callbackErreur(error) {
+        redirigerVersPage("error_operation.html");
+	}
+</script>
+</body>
+</html>

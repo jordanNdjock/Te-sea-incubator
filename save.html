@@ -1,0 +1,337 @@
+  <form action="get_information.php" method="post">
+        <div id="wizard">
+          <!-- SECTION 1 -->
+          <h4></h4>
+          <section>
+            <fieldset>
+              <legend>Personal Information</legend>
+              <div class="form-row">
+                <label for="name">Nom <span class="required">*</span></label>
+                <input type="text" name="name" class="form-control" id="name" required />
+              </div>
+              <div class="form-row">
+                <label for="prenom">Prenom <span class="required">*</span></label>
+                <input type="text" name="prenom" class="form-control" id="prenom" required />
+              </div>
+              <div class="form-row">
+                <label for="phone_number">Numéro de telephone <span class="required">*</span></label>
+                <input type="tel" name="phone_number" class="form-control" id="phone_number" required />
+              </div>
+              <div class="form-row">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" name="email" class="form-control" id="email" placeholder="exemple@gmail.com" required />
+              </div>
+            </fieldset>
+            
+          </section>
+
+          <!-- SECTION 2 -->
+          <h4></h4>
+          <section>
+            <div class="checkbox-circle">
+              <label class="active">
+                <input
+                  type="radio"
+                  name="choix_niveau"
+                  value="L1"
+                  checked
+                />L1
+                <span class="checkmark"></span>
+                <div class="tooltip">
+                  <fieldset>
+                    <legend>Pour L1</legend>
+                    
+                    <div class="form-row">
+                      <label>Expérience préalable en informatique <span class="required">*</span></label>
+                      <input type="radio" name="experience_L1" value="oui" /> oui
+                      <input type="radio" name="experience_L1" value="non" /> non
+                      <input type="radio" name="experience_L1" value="peut-etre" /> peut-être
+                    </div>
+                    
+                    <div class="form-row">
+                      <label>Si oui, préciser</label>
+                      <input type="text" class="form-control" name="experience_L1_details" />
+                    </div>
+                    
+                  </fieldset>
+                </div>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="choix_niveau"
+                  value="L2"
+                />L2
+                <span class="checkmark"></span>
+                <div class="tooltip">
+                  <fieldset>
+                    <legend>Pour L2</legend>
+                    
+                    <div class="form-row">
+                      <label>Compétences en dev web (HTML, CSS, JS) ? <span class="required">*</span></label>
+                      <input type="radio" name="web_dev_skills" value="Debutant" /> Débutant
+                      <input type="radio" name="web_dev_skills" value="Intermediaire"  /> Intermédiaire
+                      <input type="radio" name="web_dev_skills" value="Avance" /> Avancé
+                    </div>
+                  
+                    <div class="form-row">
+                      <label>Compétences en C ? <span class="required">*</span></label>
+                      <input type="radio" name="c_skills" value="Debutant" /> Débutant
+                      <input type="radio" name="c_skills" value="Intermediaire" /> Intermédiaire
+                      <input type="radio" name="c_skills" value="Avance" /> Avancé
+                    </div>
+                    
+                    <div class="form-row">
+                      <label>Compétences en dev mobile ? <span class="required">*</span></label>
+                      <input type="radio" name="mobile_dev_skills" value="Debutant" /> Débutant
+                      <input type="radio" name="mobile_dev_skills" value="Intermediaire" /> Intermédiaire
+                      <input type="radio" name="mobile_dev_skills" value="Avance" /> Avancé
+                    </div>
+                    
+                    <div class="form-row">
+                      <label>Avez-vous déjà participé à un hackathon ? <span class="required">*</span></label>
+                      <input type="radio" name="hackathon_participation" value="oui"  /> oui
+                      <input type="radio" name="hackathon_participation" value="non" /> non
+                      <input type="radio" name="hackathon_participation" value="peut-etre" /> peut-être
+                    </div>
+                  
+                  </fieldset>
+                </div>
+              </label>
+            </div>
+           
+            
+            
+            
+          </section>
+
+          <!-- SECTION 3 -->
+          <h4></h4>
+          <section>
+            <fieldset>
+              <legend>Additional Information</legend>
+            
+              <div class="form-row">
+                <label>Avez-vous déjà réalisé et hébergé un projet informatique ? <span class="required">*</span></label>
+                <input type="radio" name="hosted_project" value="oui" required /> Oui
+                <input type="radio" name="hosted_project" value="non" required /> Non
+              </div>
+            
+              <!-- <div class="form-row">
+                <label>Possédez-vous un portfolio en ligne ? <span class="required">*</span></label>
+                <input type="radio" name="has_portfolio" value="oui" required /> Oui
+                <input type="radio" name="has_portfolio" value="non" required /> Non
+              </div> -->
+            
+              <div class="form-row">
+                <label>L'informatique est une... ? <span class="required">*</span></label>
+                <input type="radio" name="it_is_a" value="passion" required /> Passion
+                <input type="radio" name="it_is_a" value="apprentissage" required /> Apprentissage
+              </div>
+            
+              <div class="form-row">
+                <label>Avez-vous déjà travaillé avec une équipe de dev ? <span class="required">*</span></label>
+                <input type="radio" name="worked_with_dev_team" value="oui" required /> Oui
+                <input type="radio" name="worked_with_dev_team" value="non" required /> Non
+              </div>
+            
+              <div class="form-row">
+                <label>Des notions en bases de données (BD) ? <span class="required">*</span></label>
+                <input type="radio" name="database_knowledge" value="oui" required /> Oui
+                <input type="radio" name="database_knowledge" value="non" required /> Non
+                <input type="radio" name="database_knowledge" value="peut-etre" required /> Peut-être
+              </div>
+            
+              <div class="form-row">
+                <label>Avez-vous déjà fait des stages ou des emplois liés à l'informatique ? <span class="required">*</span></label>
+                <input type="radio" name="it_jobs_or_internships" value="oui" required /> Oui
+                <input type="radio" name="it_jobs_or_internships" value="non" required /> Non
+                <input type="radio" name="it_jobs_or_internships" value="peut-etre" required /> Peut-être
+              </div>
+            
+              <div class="form-row">
+                <label>Êtes-vous à l'aise avec le travail et la communication à distance ? <span class="required">*</span></label>
+                <input type="radio" name="comfortable_with_remote_work" value="oui" required /> Oui
+                <input type="radio" name="comfortable_with_remote_work" value="non" required /> Non
+                <input type="radio" name="comfortable_with_remote_work" value="peut-etre" required /> Peut-être
+              </div>
+            
+              <div class="form-row">
+                <label>Avez-vous déjà utilisé des IDE (PyCharm,...) ? <span class="required">*</span></label>
+                <input type="radio" name="used_ide" value="oui" required /> Oui
+                <input type="radio" name="used_ide" value="non" required /> Non
+                <input type="radio" name="used_ide" value="peut-etre" required /> Peut-être
+              </div>
+            
+              <div class="form-row">
+                <label>Expérience les méthodologies de dev (agile,...) ? <span class="required">*</span></label>
+                <input type="radio" name="dev_methodologies_experience" value="oui" required /> Oui
+                <input type="radio" name="dev_methodologies_experience" value="non" required /> Non
+                <input type="radio" name="dev_methodologies_experience" value="peut-etre" required /> Peut-être
+              </div>
+            
+              <div class="form-row">
+                <label>Avez-vous déjà créé ou géré un site web ou blog ? <span class="required">*</span></label>
+                <input type="radio" name="managed_website_or_blog" value="oui" required /> Oui
+                <input type="radio" name="managed_website_or_blog" value="non" required /> Non
+                <input type="radio" name="managed_website_or_blog" value="peut-etre" required /> Peut-être
+              </div>
+              
+            </fieldset>
+            
+          </section>
+
+          <!-- SECTION 4 -->
+          <h4></h4>
+          <section>
+            <h6>Choix de l'emploi de temps</h6>
+            <div class="checkbox-circle">
+              <label class="active">
+                <input
+                  type="radio"
+                  name="choix_timetable"
+                  value="1"
+                  checked
+                />Choix 1
+                <span class="checkmark"></span>
+                <div class="tooltip">
+                  <table cellspading="0" cellspacing="0" border="1">
+                    <tr>
+                      <th>Jours / Heures</th>
+                      <th>Lundi</th>
+                      <th>Mardi</th>
+                      <th>Samedi</th>
+                      <th>Dimanche</th>
+                    </tr>
+                    <tr>
+                      <td>8h - 12h</td>
+                      <td></td>
+                      <td></td>
+                      <td>G1</td>
+                      <td>G1</td>
+                    </tr>
+                    <tr>
+                      <td>17h - 21h</td>
+                      <td>G1</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </table>
+                </div>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="choix_timetable"
+                  value="2"
+                />Choix 2
+                <span class="checkmark"></span>
+                <div class="tooltip">
+                  <table cellspading="0" cellspacing="0" border="1">
+                    <tr>
+                      <th>Jours / Heures</th>
+                      <th>Lundi</th>
+                      <th>Mardi</th>
+                      <th>Samedi</th>
+                      <th>Dimanche</th>
+                    </tr>
+                    <tr>
+                      <td align="center">8h - 12h</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td align="center">17h - 21h</td>
+                      <td></td>
+                      <td align="center">G2</td>
+                      <td align="center">G2</td>
+                      <td align="center">G2</td>
+                    </tr>
+                  </table>
+                </div>
+              </label>
+            </div>
+            <div class="button-container">
+                <button type="submit" name="submit" class="submit-button">Submit&nbsp;
+                  <img src="images/pay.png" alt="" srcset="" width="25%">
+                </button>
+            </div>
+          </section>
+        </div>
+      </form>
+
+
+
+
+      <div>
+        <form id="msform" class="mt-4">
+          <!-- progressbar -->
+          <ul id="progressbar" class="d-flex justify-content-around p-0">
+            <li class="active">Personal Details</li>
+            <li>Social Profiles</li>
+            <li>Account Setup</li>
+            <li>Account Setup</li>
+            <li>Account Setup</li>
+          </ul>
+          <!-- fieldsets -->
+          <fieldset>
+            <h2 class="fs-title">Personal Details</h2>
+            <h3 class="fs-subtitle">Tell us something more about you</h3>
+            <input type="text" name="fname" placeholder="First Name" />
+            <input type="text" name="lname" placeholder="Last Name" />
+            <input type="text" name="phone" placeholder="Phone" />
+            <input
+              type="button"
+              name="next"
+              class="next action-button"
+              value="Next"
+            />
+          </fieldset>
+          <fieldset>
+            <h2 class="fs-title">Social Profiles</h2>
+            <h3 class="fs-subtitle">Your presence on the social network</h3>
+            <input type="text" name="twitter" placeholder="Twitter" />
+            <input type="text" name="facebook" placeholder="Facebook" />
+            <input type="text" name="gplus" placeholder="Google Plus" />
+            <input
+              type="button"
+              name="previous"
+              class="previous action-button-previous"
+              value="Previous"
+            />
+            <input
+              type="button"
+              name="next"
+              class="next action-button"
+              value="Next"
+            />
+          </fieldset>
+          <fieldset>
+            <h2 class="fs-title">Create your account</h2>
+            <h3 class="fs-subtitle">Fill in your credentials</h3>
+            <input type="text" name="email" placeholder="Email" />
+            <input type="password" name="pass" placeholder="Password" />
+            <input
+              type="password"
+              name="cpass"
+              placeholder="Confirm Password"
+            />
+            <input
+              type="button"
+              name="previous"
+              class="previous action-button-previous"
+              value="Previous"
+            />
+            <input
+              type="submit"
+              name="submit"
+              class="submit action-button"
+              value="Submit"
+            />
+          </fieldset>
+        </form>
+        <!-- link to designify.me code snippets -->
+      </div>

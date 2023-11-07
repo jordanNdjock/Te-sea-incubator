@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>TE-SEA ENCUBATOR - Préinscription</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="colorlib.com" />
+
+    <!-- Bootstrap icon -->
+    <link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.min.css" />
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    
+    <!-- Inline style -->
+    <style>
+      @font-face {
+        font-family: "Roboto-Regular";
+        src: url("../font/Roboto-Regular.ttf");
+      }
+      body {
+        font-family: "Archivo Black", sans-serif;
+        overflow-x: hidden;
+      }
+      .gradient-text {
+        font-family: "Archivo Black", sans-serif;
+        /* Fallback: Set a background color. */
+        /* background-color: red; */
+
+        /* Create the gradient. */
+        background-image: linear-gradient(45deg, #f3ec78, #9b2c69);
+
+        /* Set the background size and repeat properties. */
+        background-size: 100%;
+        background-repeat: repeat;
+
+        /* Use the text as a mask for the background. */
+        /* This will show the gradient as a text color rather than element bg. */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        -moz-text-fill-color: transparent;
+      }
+      .text-orange {
+        color: #ff8800;
+      }
+      /* Form section ===================================*/
+      /*form styles*/
+      #msform {
+        text-align: center;
+        position: relative;
+      }
+
+      #msform fieldset {
+        background: white;
+        border: 0 none;
+        border-radius: 20px;
+        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+        padding: 20px 30px;
+        box-sizing: border-box;
+        width: 100%;
+        /* margin: 0 10%; */
+
+        /*stacking fieldsets above each other*/
+        position: relative;
+      }
+
+      /*Hide all except first fieldset*/
+      #msform fieldset:not(:first-of-type) {
+        display: none;
+      }
+
+     
+      
+      #msform input,
+      #msform textarea {
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        color: #2c3e50;
+        font-size: 13px;
+      }
+
+      #msform input:focus,
+      #msform textarea:focus {
+        -moz-box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        border: 1px solid #ff8800;
+        outline-width: 0;
+        transition: All 0.2s ease-in;
+        -webkit-transition: All 0.2s ease-in;
+        -moz-transition: All 0.2s ease-in;
+        -o-transition: All 0.2s ease-in;
+      }
+
+      /*buttons*/
+      #msform .action-button {
+        width: 100px;
+        background: #ff8800;
+        font-weight: bold;
+        color: white;
+        border: 0 none;
+        border-radius: 25px;
+        cursor: pointer;
+        padding: 10px 5px;
+        margin: 10px 5px;
+      }
+
+      #msform .action-button:hover,
+      #msform .action-button:focus {
+        box-shadow: 0 0 0 2px white, 0 0 0 3px #ff8800;
+      }
+
+      #msform .action-button-previous {
+        width: 100px;
+        background: #c5c5f1;
+        font-weight: bold;
+        color: white;
+        border: 0 none;
+        border-radius: 25px;
+        cursor: pointer;
+        padding: 10px 5px;
+        margin: 10px 5px;
+      }
+     
+
+      #msform .action-button-previous:hover,
+      #msform .action-button-previous:focus {
+        box-shadow: 0 0 0 2px white, 0 0 0 3px #c5c5f1;
+      }
+
+      /*headings*/
+      .fs-title {
+        font-size: 18px;
+        text-transform: uppercase;
+        color: #2c3e50;
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+        font-weight: bold;
+      }
+
+      .row-table{
+        color:#666;
+      }
+      .fs-subtitle, label {
+        font-weight: normal;
+        font-size: 13px;
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      /*progressbar*/
+      #progressbar {
+        margin-bottom: 30px;
+        /* overflow: hidden; */
+        /*CSS counters to number the steps*/
+        counter-reset: step;
+      }
+
+      #progressbar li {
+        list-style-type: none;
+        color: white;
+        text-transform: uppercase;
+        font-size: 9px;
+        width: 33.33%;
+        float: left;
+        position: relative;
+        letter-spacing: 1px;
+      }
+
+      #progressbar li:before {
+        content: counter(step);
+        counter-increment: step;
+        width: 24px;
+        height: 24px;
+        line-height: 26px;
+        display: block;
+        font-size: 12px;
+        color: #333;
+        background: white;
+        border-radius: 25px;
+        margin: 0 auto 10px auto;
+      }
+
+      /*progressbar connectors*/
+      #progressbar li:after {
+        /* content: ""; */
+        width: 100%;
+        height: 2px;
+        background: white;
+        position: absolute;
+        /* left: 1; */
+        top: 9px;
+        z-index: -1; /*put it behind the numbers*/
+      }
+
+      #progressbar li:first-child:after {
+        /*connector not needed before the first step*/
+        content: none;
+      }
+
+      /*marking active/completed steps green*/
+      /*The number of the step and the connector before it = green*/
+      #progressbar li.active:before,
+      #progressbar li.active:after {
+        background: #ff8800;
+        color: white;
+      }
+
+      /* Not relevant to this form */
+      .dme_link {
+        margin-top: 30px;
+        text-align: center;
+      }
+      .dme_link a {
+        background: #fff;
+        font-weight: bold;
+        color: #ff8800;
+        border: 0 none;
+        border-radius: 25px;
+        cursor: pointer;
+        padding: 5px 25px;
+        font-size: 12px;
+      }
+
+      .dme_link a:hover,
+      .dme_link a:focus {
+        background: #c5c5f1;
+        text-decoration: none;
+      }
+      span{
+        font-size: 13px;
+        color: #666;
+      }
+      table{
+        color: #666;
+      }
+      #table{
+        width: 50%;
+      }
+      #table tr td{
+        width: 25%;
+      }
+    </style>
+  </head>
+
+  <body class="text-light">
+    <div class="row vh-100 vw-100 m-0">
+      <!-- Flyers section -->
+      <div class="col-xl-6 bg-dark">
+        <!-- title section -->
+        <div>
+          <!-- logo te-sea -->
+          <div class="text-center p-4">
+            <img src="./images/tesea-incubator-light.svg" class="img-fluid" />
+          </div>
+
+          <!-- title -->
+          <div class="text-center mb-5 ps-5 pe-4">
+            <h3 class="fw-bold gradient-text">
+              Programme d'excellence et d'orientation professionnelle en IT
+            </h3>
+          </div>
+        </div>
+
+        <!-- content section -->
+        <div class="row m-0">
+          <!-- Text section -->
+          <div class="col-sm-6">
+            <!-- goal section -->
+            <div class="d-flex mb-3">
+              <div style="width: 10px" class="bg-success rounded me-3"></div>
+              <p class="text-secondary fs-6">
+                Notre mission est de vous préparer pour une carrière réussie
+                dans le domaine de l'informatique et des technologies de
+                l'information
+              </p>
+            </div>
+
+            <!-- service section -->
+            <div class="fs-5 mb-4">
+              <ul style="list-style-type: none">
+                <li>
+                  <i class="bi bi-arrow-right me-2" style="color: #ff8800"></i
+                  >Orientation professionnelle
+                </li>
+                <li>
+                  <i class="bi bi-arrow-right me-2" style="color: #ff8800"></i
+                  >Développement de compétences
+                </li>
+                <li>
+                  <i class="bi bi-arrow-right me-2" style="color: #ff8800"></i
+                  >Suivi académique
+                </li>
+              </ul>
+            </div>
+
+            <!-- Delai section -->
+            <div>
+              <p class="fs-4 gradient-text fw-bold">
+                Informations supplementaires
+              </p>
+            </div>
+
+            <!-- info supplemetaires section -->
+            <div>
+              <ul style="list-style: none" class="text-secondary">
+                <li>
+                  <p>
+                    <i
+                      class="bi bi-circle fs-6 me-2"
+                      style="color: #ff8800"
+                    ></i>
+                    <span class="fw-bold text-light">Mode de travail: </span>
+                    70 % en presentiel et 30 % en ligne
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <i
+                      class="bi bi-circle fs-6 me-2"
+                      style="color: #ff8800"
+                    ></i>
+                    <span class="fw-bold text-light"
+                      >Tarif de préinscription:
+                    </span>
+                    5000 XAF
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <i
+                      class="bi bi-circle fs-6 me-2"
+                      style="color: #ff8800"
+                    ></i>
+                    <span class="fw-bold text-light">Durée: </span>
+                    5 mois
+                  </p>
+                </li>
+              </ul>
+            </div>
+
+            <!-- technologies section -->
+            <div></div>
+          </div>
+
+          <!-- illustration section -->
+          <div class="col-sm-6">
+            <img src="./images/hero.svg" class="img-fluid" />
+          </div>
+        </div>
+
+        <!-- contact section -->
+        <div></div>
+      </div>
+
+      <!-- Form section -->
+      <div class="col-xl-6 bg-dark pt-4 ps-5 pe-5 pb-5 ">
+        <div>
+          <form id="msform" class="mt-4" action="get_information.php" method="post">
+            <!-- progressbar -->
+            <ul id="progressbar" class="d-flex justify-content-around p-0">
+              <li class="active">Informations personnelles</li>
+              <li>Questionnaire</li>
+              <li>Emploi de temps</li>
+            </ul>
+            <!-- fieldsets -->
+            <fieldset>
+              <h2 class="fs-title">Informations personnelles</h2>
+              <h3 class="fs-subtitle">Dites-nous en plus sur vous</h3>
+              <input type="text" name="fname" placeholder="Nom" id="fname" required/>
+              <input type="text" name="lname" placeholder="Prénom" id="lname" required/>
+              <input type="tel" name="phone" placeholder="Téléphone" id="phone" required />
+              <input type="email" name="email" placeholder="Email" id="email" required />
+              <input
+                type="button"
+                name="next"
+                class="next action-button"
+                value="Suivant"
+               
+              />
+            </fieldset>
+            <fieldset>
+              <h2 class="fs-title">Questionnaire</h2>
+              <h3 class="fs-subtitle">Quelques informations à propos de vos compétences</h3>
+
+              <table style="width: 100%; text-align:start;">
+                <tr>
+                  <td><label>Quel est votre niveau d'étude ?</label> </td>
+                  <td><input type="radio" name="level_study" value="L1" required /> <span>Licence 1</span></td>
+                  <td><input type="radio" name="level_study" value="L2" required /> <span>Licence 2</span></td>
+                </tr>
+                <tr>
+                  <td><label>Avez-vous déjà réalisé et hébergé un projet web ? </label></td>
+                  <td><input type="radio" name="hosted_web_project" value="oui" required /> <span>Oui</span></td>
+                  <td><input type="radio" name="hosted_web_project" value="non" required /> <span>Non</span></td>
+                </tr>
+                <tr>
+                    <td><label>Avez-vous déjà travailler avec une équipe de dev ?</label></td>
+                    <td><input type="radio" name="worked_with_dev_team" value="oui" required /><span>Oui</span> </td>
+                    <td><input type="radio" name="worked_with_dev_team" value="non" required /> <span>Non</span></td>
+                    
+                </tr>
+                <tr>
+                  <td><label>Expérience dans les méthodologies de dévéloppement (agile,...) ?</label></td>
+                  <td><input type="radio" name="dev_methodologies_experience" value="oui" required /> <span>Oui</span></td>
+                  <td><input type="radio" name="dev_methodologies_experience" value="non" required /> <span>Non</span></td>
+               
+                </tr>
+                <tr>
+                  <td><label>Avez-vous déjà utilisé des outils de dévélopppement ? </label></td>
+                  <td><input type="radio" name="used_ide" value="oui" required /> <span>Oui</span></td>
+                  <td><input type="radio" name="used_ide" value="non" required /> <span>Non</span></td>
+                </tr>
+              </table>
+              <br>
+            
+              
+
+              <input
+                type="button"
+                name="previous"
+                class="previous action-button-previous"
+                value="Précédent"
+              />
+              <input
+                type="button"
+                name="next"
+                class="next action-button"
+                value="Suivant"
+              />
+            </fieldset>
+            <fieldset>
+              <h2 class="fs-title">Emploi de temps</h2>
+              <h2 class="fs-subtitle">Choisir son emploi de temps</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tr>
+                    <td ><label for=""><b>Choix 1</b></label><input type="radio" name="timetable" value="choix1" required></td>
+                    <td><label for=""><b>Choix 2</b></label><input type="radio" name="timetable" value="choix2" required></td>
+                  </tr>
+                  <tr>
+                    <td>                
+                      <table cellspading="0" cellspacing="0" border="1" class="table">
+                        <tr>
+                          <th>Jours / Heures</th>
+                          <th>Lundi</th>                 
+                          <th>Samedi</th>
+                          <th>Dimanche</th>
+                        </tr>
+                        <tr>
+                          <td>8h - 12h</td>
+                          <td></td>
+                          <td>G1</td>
+                          <td>G1</td>
+                        </tr>
+                        <tr>
+                          <td>17h - 21h</td>
+                          <td>G1</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      
+                      </table>
+                    </td>
+                    <td>
+                      
+                      <table cellspading="0" cellspacing="0" border="1" class="table">
+                        <tr>
+                          <th>Jours / Heures</th>
+                          <th>Mardi</th>
+                          <th>Samedi</th>
+                          <th>Dimanche</th>
+                        </tr>
+                        <tr>
+                          <td align="center">8h - 12h</td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td align="center">17h - 21h</td>
+                          <td align="center">G2</td>
+                          <td align="center">G2</td>
+                          <td align="center">G2</td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                 </table>
+              </div>
+            
+              <br><br><br>
+             <h3 class="fs-subtitle fs-5 fw-bold"> Choisir son programme d'excellence académique</h3>
+             <center>
+              <table  id="table">
+                <tr>
+                  <td><input type="checkbox" name="orientation_pro" id="choix1" value="oui"></td>
+                  <td><span>Orientation professionnelle</span></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" name="dev_competence" id="choix2" value="oui"></td>
+                  <td><span>Développement de compétences</span></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" name="suivi_academique" id="choix3" value="oui"></td>
+                  <td><span>Suivi académique</span></td>
+                </tr>
+               </table>
+             </center>
+            
+             
+            
+
+              <br><br>
+
+
+              <input
+                type="button"
+                name="previous"
+                class="previous action-button-previous"
+                value="Précédent"
+              />
+              <input
+                type="submit"
+                name="submit"
+                class="submit action-button"
+                value="Soumettre"
+                onclick="openWidget();"
+              />
+            </fieldset>
+          </form>
+          <!-- link to designify.me code snippets -->
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+
+
+    <!-- JQUERY STEP -->
+    <!-- <script src="js/jquery.steps.js"></script> -->
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- <script src="js/main.js"></script> -->
+
+    <!-- Style 1 -->
+    <script>
+      var current_fs, next_fs, previous_fs; //fieldsets
+      var left, opacity, scale; //fieldset properties which we will animate
+      var animating; //flag to prevent quick multi-click glitches
+
+      $(".next").click(function () {
+        if (animating) return false;
+        animating = true;
+
+        current_fs = $(this).parent();
+        next_fs = $(this).parent().next();
+
+        //activate next step on progressbar using the index of next_fs
+        $("#progressbar li")
+          .eq($("fieldset").index(next_fs))
+          .addClass("active");
+
+        //show the next fieldset
+        next_fs.show();
+        //hide the current fieldset with style
+        current_fs.animate(
+          { opacity: 0 },
+          {
+            step: function (now, mx) {
+              //as the opacity of current_fs reduces to 0 - stored in "now"
+              //1. scale current_fs down to 80%
+              scale = 1 - (1 - now) * 0.2;
+              //2. bring next_fs from the right(50%)
+              left = now * 50 + "%";
+              //3. increase opacity of next_fs to 1 as it moves in
+              opacity = 1 - now;
+              current_fs.css({
+                transform: "scale(" + scale + ")",
+                position: "absolute",
+              });
+              next_fs.css({ left: left, opacity: opacity });
+            },
+            duration: 800,
+            complete: function () {
+              current_fs.hide();
+              animating = false;
+            },
+            //this comes from the custom easing plugin
+            easing: "easeInOutBack",
+          }
+        );
+      });
+
+      $(".previous").click(function () {
+        if (animating) return false;
+        animating = true;
+
+        current_fs = $(this).parent();
+        previous_fs = $(this).parent().prev();
+
+        //de-activate current step on progressbar
+        $("#progressbar li")
+          .eq($("fieldset").index(current_fs))
+          .removeClass("active");
+
+        //show the previous fieldset
+        previous_fs.show();
+        //hide the current fieldset with style
+        current_fs.animate(
+          { opacity: 0 },
+          {
+            step: function (now, mx) {
+              //as the opacity of current_fs reduces to 0 - stored in "now"
+              //1. scale previous_fs from 80% to 100%
+              scale = 0.8 + (1 - now) * 0.2;
+              //2. take current_fs to the right(50%) - from 0%
+              left = (1 - now) * 50 + "%";
+              //3. increase opacity of previous_fs to 1 as it moves in
+              opacity = 1 - now;
+              current_fs.css({ left: left });
+              previous_fs.css({
+                transform: "scale(" + scale + ")",
+                opacity: opacity,
+              });
+            },
+            duration: 800,
+            complete: function () {
+              current_fs.hide();
+              animating = false;
+            },
+            //this comes from the custom easing plugin
+            easing: "easeInOutBack",
+          }
+        );
+      });
+
+      $(".submit").click(function () {
+        return false;
+      });
+
+
+      function openWidget() {
+        if (auMoinsUnCoche() && validerFormulaire()) {
+
+          let amount = calculerMontant();
+          // Le formulaire est valide, vous pouvez stocker les données dans le localStorage
+
+        // Créez un objet pour stocker les données
+        var formData = {
+            fname: document.querySelector('input[name="fname"]').value,
+            lname: document.querySelector('input[name="lname"]').value,
+            phone: document.querySelector('input[name="phone"]').value,
+            email: document.querySelector('input[name="email"]').value,
+            level_study: document.querySelector('input[name="level_study"]:checked').value,
+            hosted_web_project: document.querySelector('input[name="hosted_web_project"]:checked').value,
+            worked_with_dev_team: document.querySelector('input[name="worked_with_dev_team"]:checked').value,
+            dev_methodologies_experience: document.querySelector('input[name="dev_methodologies_experience"]:checked').value,
+            used_ide: document.querySelector('input[name="used_ide"]:checked').value,
+            timetable: document.querySelector('input[name="timetable"]:checked').value,
+            suivi_academique: document.querySelector('input[name="suivi_academique"]:checked') ? document.querySelector('input[name="suivi_academique"]:checked').value : "non",
+            dev_competence: document.querySelector('input[name="dev_competence"]:checked') ? document.querySelector('input[name="dev_competence"]:checked').value : "non",
+            orientation_pro: document.querySelector('input[name="orientation_pro"]:checked') ? document.querySelector('input[name="orientation_pro"]:checked').value : "non",
+            montant: amount,
+
+
+        };
+
+          // Stockez les données dans le localStorage
+          localStorage.setItem('formData', JSON.stringify(formData));
+           // Récupérez les données actuellement enregistrées dans le localStorage
+            var storedData = localStorage.getItem('formData');
+
+            // Si des données sont déjà enregistrées, analysez-les en tant qu'objet
+            if (storedData) {
+                storedData = JSON.parse(storedData);
+                
+                // Vérifiez si les données sont identiques
+                if (JSON.stringify(formData) !== JSON.stringify(storedData)) {
+                    // Les données ne sont pas identiques, vous pouvez les enregistrer
+                    localStorage.setItem('formData', JSON.stringify(formData));
+                } else {
+                    // Les données sont identiques, vous pouvez gérer le cas ici
+                    
+                }
+            } else {
+                // Aucune donnée n'est enregistrée, vous pouvez les enregistrer
+                localStorage.setItem('formData', JSON.stringify(formData));
+            }
+          //redirection
+          window.location.href = "paiement.html?montant=" + encodeURIComponent(amount);
+
+        }else{
+          alert("Veuillez remplir tous les champs du formulaire et choisir au moins une checkbox !");
+        }
+          
+          }
+         
+      function calculerMontant() {
+            var montantDeBase = 15000; // Montant de base pour la première case cochée
+            var montantParCase = 5000; // Montant ajouté par case cochée après la première
+            var montantTotal = 0;
+            var casesCochees = 0;
+
+            // Vérifiez combien de cases sont cochées
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(function(checkbox) {
+              if (checkbox.checked) {
+                casesCochees++;
+              }
+            });
+
+            // Calculez le montant en fonction du nombre de cases cochées
+            if (casesCochees > 0) {
+              montantTotal = montantDeBase + (casesCochees - 1) * montantParCase;
+            }
+
+            return montantTotal;
+        }
+        function auMoinsUnCoche() {
+          var checkboxCoches = document.querySelector('input[type="checkbox"]:checked');
+          return checkboxCoches !== null;
+        }
+
+        function validerFormulaire() {
+          var champs = document.querySelectorAll("input[type=text], input[type=radio]");
+          var formulaireValide = true;
+
+          for (var i = 0; i < champs.length; i++) {
+              var champ = champs[i];
+
+              if (champ.type === "text" && (champ.value === "" || champ.value === null)) {
+                  formulaireValide = false;
+                  break;
+              } else if (champ.type === "radio") {
+                // Vérifiez si au moins une option a été sélectionnée
+                var name = champ.getAttribute("name");
+                var options = document.querySelectorAll("input[type=" + champ.type + "][name=" + name + "]");
+                var optionSelected = false;
+
+                for (var j = 0; j < options.length; j++) {
+                    if (options[j].checked) {
+                        optionSelected = true;
+                        break; // Sortez de la boucle dès qu'une option est sélectionnée
+                    }
+          }
+
+          if (!optionSelected) {
+              formulaireValide = false;
+              break;
+          }
+}
+    }
+
+    if (!formulaireValide) {
+        // alert("Veuillez remplir tous les champs avant de soumettre le formulaire.");
+        return false; // Empêche la soumission du formulaire
+    }
+    return true; // Autorise la soumission du formulaire si tous les champs sont remplis
+}
+
+
+
+
+    </script>
+   
+  </body>
+</html>
