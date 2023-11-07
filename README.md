@@ -13,7 +13,7 @@ module d'enregistrement des etudiants à la plateforme Te-Sea pour une formation
 
 ## Contribution au projet
 
-Te-Sea incubatoe est un projet avec une propriété Te - Sea.
+Te-Sea incubator est un projet avec une propriété Te - Sea.
 
 ## Auteurs
 
