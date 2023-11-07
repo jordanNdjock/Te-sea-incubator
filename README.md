@@ -2,7 +2,7 @@
 
 # Te-sea-incubator 
 
-module d'enregistrement des etudiants à la plateforme Te-Sea pour une formation professionnelle, un encadrement et un suivi académique.
+module d'enregistrement des etudiants à la plateforme Te-Sea pour une formation professionnelle, un encadrement et un suivi académique. Disponible sur *incubator.te-sea.cm*
 
 ## Technologies
 - JS
