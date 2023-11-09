@@ -29,10 +29,10 @@
 	}
 	// Définition des fonctions de rappel (callbacks)
 	function callbackReussite(response) {
-        redirigerVersPage("success_operation.php");
+        window.location.href = "success_operation.php";
     }
     function callbackErreur(error) {
-        redirigerVersPage("error_operation.html");
+        window.location.href = "error_operation.html";
 	}
 </script>
 </body>
